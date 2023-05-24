@@ -1,3 +1,20 @@
+## Textual Representation
+
+```sql
++----------------+     +-----------------+     +-------------------+
+| User Service   |<--->| Review Service  |<--->| Campground Service|
+|    (gRPC)      |     |     (gRPC)      |     |      (gRPC)       |
+|    :50051      |     |     :50052       |     |       :50053     |
++----------------+     +-----------------+     +-------------------+
+        ^                        ^                         ^
+        |                        |                         |
+        |                        |                         |
++----------------+     +-----------------+     +-------------------+
+| API Gateway    |<----| API Gateway     |<----| API Gateway       |
+|   (REST API)   |     |    (REST API)   |     |     (REST API)    |
+|    :3000       |     |     :3000       |     |       :3000       |
++----------------+     +-----------------+     +-------------------+
+```
 ## User Endpoints
 
 ### Get all users
@@ -439,20 +456,3 @@ The API Gateway will be running on port 3000.
 
 Make sure that all the necessary dependencies are installed and the respective gRPC services are running on their specified addresses. With these instructions, you should be able to run the User Service, Review Service, and Campground Service separately.
 
-## Textual Representation
-
-```sql
-+----------------+     +-----------------+     +-------------------+
-| User Service   |<--->| Review Service  |<--->| Campground Service|
-|    (gRPC)      |     |     (gRPC)      |     |      (gRPC)       |
-|    :50051      |     |     :50052       |     |       :50053      |
-+----------------+     +-----------------+     +-------------------+
-        ^                        ^                         ^
-        |                        |                         |
-        |                        |                         |
-+----------------+     +-----------------+     +-------------------+
-| API Gateway    |<----| API Gateway     |<----| API Gateway       |
-|   (REST API)   |     |    (REST API)   |     |     (REST API)     |
-|    :3000       |     |     :3000       |     |       :3000       |
-+----------------+     +-----------------+     +-------------------+
-```
