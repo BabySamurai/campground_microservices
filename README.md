@@ -200,9 +200,7 @@ Creates a new review.
   "review_id": "string",
   "title": "string",
   "body": "string",
-  "rating": "number
-
-",
+  "rating": "number",
   "user_id": "string"
 }
 ```
