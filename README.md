@@ -143,7 +143,7 @@ Retrieves a list of all reviews.
     "title": "string",
     "body": "string",
     "rating": "number",
-    "user_id": "string"
+    "user": "User"
   }
 ]
 ```
@@ -171,7 +171,7 @@ Retrieves a specific review by ID.
   "title": "string",
   "body": "string",
   "rating": "number",
-  "user_id": "string"
+  "user": "User"
 }
 ```
 
@@ -201,7 +201,7 @@ Creates a new review.
   "title": "string",
   "body": "string",
   "rating": "number",
-  "user_id": "string"
+  "user": "User"
 }
 ```
 
@@ -234,7 +234,7 @@ Updates an existing review.
   "title": "string",
   "body": "string",
   "rating": "number",
-  "user_id": "string"
+  "user": "User"
 }
 ```
 
@@ -278,8 +278,8 @@ Retrieves a list of all campgrounds.
     "description": "string",
     "price": "number",
     "location": "string",
-    "user_id": "string",
-    "review_ids": ["string"]
+    "user": "User",
+    "reviews": ["Review"]
   }
 ]
 ```
@@ -308,8 +308,8 @@ Retrieves a specific campground by ID.
   "description": "string",
   "price": "number",
   "location": "string",
-  "user_id": "string",
-  "review_ids": ["string"]
+  "user": "User",
+  "review": ["Review"]
 }
 ```
 
@@ -342,8 +342,8 @@ Creates a new campground.
   "description": "string",
   "price": "number",
   "location": "string",
-  "user_id": "string",
-  "review_ids": ["string"]
+  "user": "User",
+  "reviews": ["Review"]
 }
 ```
 
@@ -380,8 +380,8 @@ Updates an existing campground.
   "description": "string",
   "price": "number",
   "location": "string",
-  "user_id": "string",
-  "review_ids": ["string"]
+  "user": "User",
+  "reviews": ["Review"]
 }
 ```
 
