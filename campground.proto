@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package campground;
+import "user.proto";
+import "review.proto";
+
+message Campground {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  double price = 4;
+  string location = 5;
+  //bytes image = 7
+  //int32 height = 8;
+  //int32 width = 9;
+  User user = 6;
+  repeated Review reviews = 7;
+}
+
+message GetCampgroundRequest {
+  string campground_id = 1;
+}
+
+message GetCampgroundResponse {
+  Campground campground = 1;
+}
+
+message SearchCampgroundsRequest {
+  string query = 1;
+}
+
+message SearchCampgroundsResponse {
+  repeated Campground campgrounds = 1;
+}
+
+message CreateCampgroundRequest {
+  string campground_id = 1;
+  string title = 2;
+  string description = 3;
+  double price = 4;
+  string location = 5;
+  //bytes image = 7
+  //int32 height = 8;
+  //int32 width = 9;
+  string user_id = 6;
+  repeated string review_ids = 7;
+}
+
+message CreateCampgroundResponse {
+  Campground campground = 1;
+}
+
+message UpdateCampgroundRequest {
+  string campground_id = 1;
+  string title = 2;
+  string description = 3;
+  double price = 4;
+  string location = 5;
+}
+
+message UpdateCampgroundResponse {
+  Campground campground = 1;
+}
+
+message DeleteCampgroundRequest {
+  string campground_id = 1;
+}
+
+message DeleteCampgroundResponse {
+  bool success = 1;
+}
+
+service CampgroundService {
+  rpc GetCampground(GetCampgroundRequest) returns (GetCampgroundResponse);
+  rpc SearchCampgrounds(SearchCampgroundsRequest) returns (SearchCampgroundsResponse);
+  rpc CreateCampground(CreateCampgroundRequest) returns (CreateCampgroundResponse);
+  rpc UpdateCampground(UpdateCampgroundRequest) returns (UpdateCampgroundResponse);
+  rpc DeleteCampground(DeleteCampgroundRequest) returns (DeleteCampgroundResponse);
+}
+
