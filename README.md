@@ -439,6 +439,20 @@ The API Gateway will be running on port 3000.
 
 Make sure that all the necessary dependencies are installed and the respective gRPC services are running on their specified addresses. With these instructions, you should be able to run the User Service, Review Service, and Campground Service separately.
 
-If you encounter any issues or errors, please make sure to check the documentation or README files provided with each microservice for more specific instructions.
+## Textual Representation
 
-Let me know if you need further assistance!
+```sql
++----------------+     +-----------------+     +-------------------+
+| User Service   |<--->| Review Service  |<--->| Campground Service|
+|    (gRPC)      |     |     (gRPC)      |     |      (gRPC)       |
+|    :50051      |     |     :50052       |     |       :50053      |
++----------------+     +-----------------+     +-------------------+
+        ^                        ^                         ^
+        |                        |                         |
+        |                        |                         |
++----------------+     +-----------------+     +-------------------+
+| API Gateway    |<----| API Gateway     |<----| API Gateway       |
+|   (REST API)   |     |    (REST API)   |     |     (REST API)     |
+|    :3000       |     |     :3000       |     |       :3000       |
++----------------+     +-----------------+     +-------------------+
+```
